@@ -84,9 +84,14 @@ void writeVideoBMP(u16 x, u16 y, bmpfile_t *bmp) {
   if (!bmp || !bmp->colors) return;
   // writeVideoWindow((bmp->colors), x, y, x + bmp_get_width(bmp),
   //                  y + bmp_get_height(bmp));
-  for (i = x; i < x + bmp_get_width(bmp); i++) {
-    for (j = y; j < y + bmp_get_height(bmp); j++) {
-      setVideoPixel(i, j, *((u32 *)(&(bmp->pixels[i - x][j - y]))));
+  // for (i = x; i < x + bmp_get_width(bmp); i++) {
+  //   for (j = y; j < y + bmp_get_height(bmp); j++) {
+  //     setVideoPixel(i, j, *((u32 *)(&(bmp->pixels[i - x][j - y]))));
+  //   }
+  // }
+  for (i = y; i < y + bmp_get_height(bmp); i++) {
+    for (j = x; j < x + bmp_get_width(bmp); j++) {
+      setVideoPixel(j, i, *((u32 *)(&(bmp->pixels[j - x][i - y]))));
     }
   }
 }

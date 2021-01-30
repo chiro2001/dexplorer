@@ -2,6 +2,7 @@
   "files.associations": {
     "BGIDEMO.C": "cpp",
     "BMP.C": "cpp",
-    "EWCONIO.C": "cpp"
+    "EWCONIO.C": "cpp",
+    "TCALC.C": "cpp"
   }
 }
